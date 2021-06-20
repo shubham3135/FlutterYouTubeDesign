@@ -1,50 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:youtube_design/widgets/appbar/custom_mobile_appbar.dart';
 
 class LibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverAppBar(
-          pinned: false,
-          floating: true,
-          snap: true,
-          flexibleSpace: AppBar(
-            title: Container(
-              child: Image.asset('assets/youtube.png'),
-              height: 22,
-            ),
-            backgroundColor: Colors.white,
-            actions: [
-              IconButton(
-                  icon: Icon(
-                    Icons.cast,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {}),
-              IconButton(
-                  icon: Icon(
-                    Icons.notifications_none_outlined,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {}),
-              IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {}),
-              IconButton(
-                icon: CircleAvatar(
-                  radius: 13,
-                  backgroundImage: ExactAssetImage('assets/pic0.jpg'),
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
+        CustomMobileAppbar(),
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,7 +130,9 @@ class LibraryScreen extends StatelessWidget {
                         const EdgeInsets.only(left: 15.0, top: 10, bottom: 10),
                     child: Row(
                       children: [
-                        Icon(Icons.ondemand_video),
+                        Icon(
+                          CupertinoIcons.arrowtriangle_right_square,
+                        ),
                         SizedBox(
                           width: 32,
                         ),
@@ -182,7 +148,9 @@ class LibraryScreen extends StatelessWidget {
                         EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
                     child: Row(
                       children: [
-                        Icon(Icons.download_rounded),
+                        Icon(
+                          CupertinoIcons.arrow_down_to_line,
+                        ),
                         SizedBox(
                           width: 30,
                         ),
@@ -203,7 +171,7 @@ class LibraryScreen extends StatelessWidget {
                         SizedBox(
                           width: 165,
                         ),
-                        Icon(Icons.download_done_outlined),
+                        Icon(Icons.check_circle_sharp),
                       ],
                     ),
                   ),
@@ -212,7 +180,7 @@ class LibraryScreen extends StatelessWidget {
                         const EdgeInsets.only(left: 15.0, top: 10, bottom: 10),
                     child: Row(
                       children: [
-                        Icon(Icons.local_movies),
+                        Icon(Icons.local_movies_sharp),
                         SizedBox(
                           width: 32,
                         ),

@@ -7,20 +7,14 @@ class Item extends StatelessWidget {
   const Item({Key? key, this.imagePath}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Card(
+      elevation: width < 800 ? 5.0 : 0.0,
       child: Column(
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 200,
-            /*decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: ExactAssetImage(
-                  "assets/pic$imagePath.jpg",
-                ),
-              ),
-            ),*/
+            height: width < 800 ? 200 : 150,
             child: PinchZoom(
               image: Image.asset(
                 "assets/pic$imagePath.jpg",
@@ -44,12 +38,12 @@ class Item extends StatelessWidget {
               'Watch: Shubham slams Rahul',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 14,
+                  fontSize: width < 800 ? 14 : 12,
                   fontWeight: FontWeight.w700),
             ),
             subtitle: Text(
               'Hindustan Times . ${imagePath! + 3}1K views . ${30 - imagePath!} days ago',
-              style: TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: width < 800 ? 12 : 10),
             ),
             trailing: IconButton(
               icon: Icon(
