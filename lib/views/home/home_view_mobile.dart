@@ -170,11 +170,11 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              CupertinoIcons.play_rectangle,
+              Icons.subscriptions_outlined,
               color: Colors.black,
             ),
             activeIcon: Icon(
-              CupertinoIcons.play_rectangle_fill,
+              Icons.subscriptions,
             ),
             label: 'Subscription',
           ),

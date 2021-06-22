@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomMobileAppbar extends StatelessWidget {
   const CustomMobileAppbar({Key? key}) : super(key: key);
@@ -16,6 +17,10 @@ class CustomMobileAppbar extends StatelessWidget {
           height: 22,
         ),
         backgroundColor: Colors.white,
+        backwardsCompatibility: false,
+        systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.grey[400],
+            statusBarIconBrightness: Brightness.light),
         actions: [
           IconButton(
               icon: Icon(
